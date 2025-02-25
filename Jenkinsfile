@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE_NAME = 'scientific-calculator'
-        GITHUB_REPO_URL = 'https://github.com/tushar-dubey5/Scientific_Calculator.git'
+        GITHUB_REPO_URL = 'https://github.com/tushar-dubey5/SPE_Calculator_Java.git'
         DOCKER_HUB_CREDENTIALS = 'eefd2860-3c6b-425f-b351-76af9a1c93c6'
         DOCKER_HUB_USERNAME = 'tushar542001'
     }
