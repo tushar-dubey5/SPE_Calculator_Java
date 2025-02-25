@@ -1,14 +1,14 @@
-# Use OpenJDK 17 as the base image (if you're using OpenJDK 17 locally)
+# Use OpenJDK 17 as the base image
 FROM openjdk:17-slim
 
 # Set working directory
 WORKDIR /app
 
 # Copy all project files into the container
-COPY . /app
+COPY src /app/src
 
-# Compile Java program
-RUN javac Calculator.java
+# Compile the Java program (adjust path based on actual location)
+RUN javac /app/src/Calculator.java
 
 # Run the Java application
-CMD ["java", "Calculator"]
+CMD ["java", "-cp", "/app/src", "Calculator"]
