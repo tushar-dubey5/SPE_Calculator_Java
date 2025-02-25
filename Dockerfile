@@ -1,8 +1,7 @@
-# Use an OpenJDK base image
-FROM openjdk:17-slim
+FROM openjdk:11-slim
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the JAR file into the container
-COPY target/calculator-1.0-SNAPSHOT.jar /app/calculator.jar
+COPY target/scientific-calculator-1.0-SNAPSHOT.jar /app/app.jar
+
+CMD ["java", "-jar", "app.jar"]
