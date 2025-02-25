@@ -14,15 +14,16 @@ pipeline {
             }
         }
 
-        stage('Build Java Code') {
+        stage('Build the Maven Project') {
             steps {
-                sh 'javac Calculator.java'
+                // Build the Maven project
+                sh 'mvn clean package'
             }
         }
-
-        stage('Run Unit Tests') {
+        
+        stage('Test the Maven project') { 
             steps {
-                sh 'java -cp .:junit-4.13.2.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore CalculatorTest'
+                sh 'mvn test' 
             }
         }
 
