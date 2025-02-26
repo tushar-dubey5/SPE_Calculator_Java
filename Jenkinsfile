@@ -44,6 +44,7 @@ pipeline {
             steps {
                 script {
                         withDockerRegistry([credentialsId: 'docker-hub-credential', url: '']){
+                        sh "docker tag ${DOCKER_IMAGE_NAME} ${DOCKER_HUB_USERNAME}/${DOCKER_IMAGE_NAME}:latest"
                         sh "docker push ${DOCKER_HUB_USERNAME}/${DOCKER_IMAGE_NAME}:latest"
                     }
                 }
