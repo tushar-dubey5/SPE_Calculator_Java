@@ -6,14 +6,14 @@ public class CalculatorTest {
 
     @Test
     public void testAdd() {
-        assertEquals(10.0, Calculator.add(5, 5), 0.0001);
+        assertEquals(5.0, Calculator.add(2, 3), 0.0001);
         assertEquals(-1.0, Calculator.add(-2, 1), 0.0001);
         assertEquals(0.0, Calculator.add(0, 0), 0.0001);
     }
 
     @Test
     public void testSubtract() {
-        assertEquals(0.0, Calculator.subtract(2, 2), 0.0001);
+        assertEquals(1.0, Calculator.subtract(3, 2), 0.0001);
         assertEquals(-3.0, Calculator.subtract(-2, 1), 0.0001);
         assertEquals(0.0, Calculator.subtract(0, 0), 0.0001);
     }
@@ -65,6 +65,20 @@ public class CalculatorTest {
             fail("Expected ArithmeticException");
         } catch (ArithmeticException e) {
             assertEquals("Error! Logarithm of zero or negative number.", e.getMessage());
+        }
+    }
+
+    // Test for factorial
+    @Test
+    public void testFactorial() {
+        assertEquals(120.0, Calculator.factorial(5), 0.0001); // 5! = 120
+        assertEquals(1.0, Calculator.factorial(0), 0.0001); // 0! = 1
+        assertEquals(1.0, Calculator.factorial(1), 0.0001); // 1! = 1
+        try {
+            Calculator.factorial(-5);
+            fail("Expected ArithmeticException");
+        } catch (ArithmeticException e) {
+            assertEquals("Error! Factorial of a negative number.", e.getMessage());
         }
     }
 }
