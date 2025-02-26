@@ -102,7 +102,7 @@ public class Calculator {
                     System.out.println("Result: " + logarithm(num1));
                     break;
                 case 8:
-                    System.out.println("Exiting the program. Goodbye!");
+                    System.out.println("Phir Milenge Kabhi....");
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
