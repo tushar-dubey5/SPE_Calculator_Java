@@ -9,9 +9,11 @@ pipeline {
 
     stages {
         stage('Clone Git') {
-            steps {
-                git branch: 'master', url: "${GITHUB_REPO_URL}"
-            }
+             script {
+                    git branch: 'master',
+                        credentialsId: 'github_credentials', 
+                        url: "${GITHUB_REPO_URL}"
+                }
         }
 
         stage('Build the Maven Project') {
