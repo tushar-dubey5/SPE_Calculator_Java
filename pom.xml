@@ -52,7 +52,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.Calculator</mainClass>
+                            <mainClass>org.example.Calculator</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
