@@ -58,7 +58,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <mainClass>com.example.Calculator</mainClass>
+                    <mainClass>org.example.Calculator</mainClass>
                 </configuration>
             </plugin>
         </plugins>
