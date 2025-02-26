@@ -40,26 +40,37 @@ public class Calculator {
         return Math.log(num);
     }
 
+    // Add the factorial method here
+    public static double factorial(double num) {
+        if (num < 0) {
+            throw new ArithmeticException("Error! Factorial of a negative number.");
+        }
+        double result = 1;
+        for (int i = 1; i <= num; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice;
 
-        // Loop until the user chooses to quit
+        // Loop to keep the calculator running until user decides to exit
         do {
-            System.out.println("\nScientific Calculator");
-            System.out.println("1. Add");
-            System.out.println("2. Subtract");
-            System.out.println("3. Multiply");
-            System.out.println("4. Divide");
-            System.out.println("5. Power");
-            System.out.println("6. Square Root");
-            System.out.println("7. Logarithm");
-            System.out.println("8. Quit");
+            System.out.println("Scientific Calculator");
+            System.out.println("1. Add\n2. Subtract\n3. Multiply\n4. Divide");
+            System.out.println("5. Power\n6. Square Root\n7. Logarithm\n8. Factorial");
+            System.out.println("9. Exit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
 
-            double num1, num2;
+            if (choice == 9) {
+                System.out.println("Exiting the calculator...");
+                break;  // Exit the loop and end the program
+            }
 
+            double num1, num2;
             switch (choice) {
                 case 1:
                     System.out.print("Enter two numbers: ");
@@ -92,24 +103,25 @@ public class Calculator {
                     System.out.println("Result: " + power(num1, num2));
                     break;
                 case 6:
-                    System.out.print("Enter number: ");
+                    System.out.print("Enter a number: ");
                     num1 = scanner.nextDouble();
                     System.out.println("Result: " + squareRoot(num1));
                     break;
                 case 7:
-                    System.out.print("Enter number: ");
+                    System.out.print("Enter a number: ");
                     num1 = scanner.nextDouble();
                     System.out.println("Result: " + logarithm(num1));
                     break;
                 case 8:
-                    System.out.println("Phir Milenge Kabhi....");
+                    System.out.print("Enter a number: ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Result: " + factorial(num1));
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
+        } while (true);  // Continue looping until the user chooses to exit
 
-        } while (choice != 8);  // Loop continues until user chooses to quit
-
-        scanner.close();
+        scanner.close();  // Close the scanner after exiting the loop
     }
 }
