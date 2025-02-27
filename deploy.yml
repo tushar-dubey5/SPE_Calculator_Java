@@ -1,3 +1,4 @@
+
 ---
 - name: Deploy Calculator App with Docker
   hosts: webserver
@@ -8,12 +9,8 @@
         name: docker.io
         state: present
 
-#    - name: Stop and Remove Existing Container (if running)
-#      command: docker rm -f scientific-calculator
-#      ignore_errors: yes  # Ignore errors if the container does not exist
-
     - name: Pull Docker Image
-      command: docker pull tushar542001/scientific-calculator:latest
+      command: docker pull mydockerhub/scientific-calculator:latest
 
-    - name: Run Docker Container with Fixed Name
-      command: docker run -d --name scientific-calculator tushar542001/scientific-calculator:latest
+    - name: Run Docker Container
+      command: docker run -d --name scientific-calculator mydockerhub/scientific-calculator:latest
