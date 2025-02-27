@@ -8,17 +8,21 @@
         name: docker.io
         state: present
 
-    - name: Pull Docker Image
-      command: docker pull mydockerhub/scientific-calculator:latest
+    - name: Pull the latest Docker image
+      community.docker.docker_image:
+        name: tushar542001/scientific-calculator:latest
+        source: pull
 
-    - name: Stop Existing Container (if running)
-      command: docker stop scientific-calculator
-      ignore_errors: yes  # Ignore errors if the container is not running
+    - name: Stop and remove existing container (if any)
+      community.docker.docker_container:
+        name: scientific-calculator
+        state: absent
 
-    - name: Remove Existing Container (if exists)
-      command: docker rm scientific-calculator
-      ignore_errors: yes  # Ignore errors if the container does not exist
-
-    - name: Run Docker Container with Fixed Name
-      command: docker run -dit --name scientific-calculator mydockerhub/scientific-calculator:latest
-    
+    - name: Run new container
+      community.docker.docker_container:
+        name: scientific-calculator
+        image: tushar542001/scientific-calculator:latest
+        state: started
+        restart_policy: always
+        interactive: true
+        tty: true
