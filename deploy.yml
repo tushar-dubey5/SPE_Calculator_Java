@@ -20,4 +20,5 @@
       ignore_errors: yes  # Ignore errors if the container does not exist
 
     - name: Run Docker Container with Fixed Name
-      command: docker run -d --name scientific-calculator mydockerhub/scientific-calculator:latest
+      command: docker run -dit --name scientific-calculator mydockerhub/scientific-calculator:latest
+    
