@@ -26,3 +26,4 @@
         restart_policy: always
         interactive: true
         tty: true
+        command: "java -jar /app/scientific-calculator.jar"
