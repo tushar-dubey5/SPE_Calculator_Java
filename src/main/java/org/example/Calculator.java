@@ -1,6 +1,8 @@
+package org.example;
 import java.util.Scanner;
 
 public class Calculator {
+
     public static double add(double a, double b) {
         return a + b;
     }
@@ -20,21 +22,52 @@ public class Calculator {
         return a / b;
     }
 
+    public static double power(double base, double exponent) {
+        return Math.pow(base, exponent);
+    }
+
+    public static double squareRoot(double num) {
+        if (num < 0) {
+            throw new ArithmeticException("Error! Square root of a negative number.");
+        }
+        return Math.sqrt(num);
+    }
+
+    public static double logarithm(double num) {
+        if (num <= 0) {
+            throw new ArithmeticException("Error! Logarithm of zero or negative number.");
+        }
+        return Math.log(num);
+    }
+
+    // Add the factorial method here
+    public static double factorial(double num) {
+        if (num < 0) {
+            throw new ArithmeticException("Error! Factorial of a negative number.");
+        }
+        double result = 1;
+        for (int i = 1; i <= num; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("Scientific Calculator Running in Docker...");
-        System.out.println("Press Ctrl+C to stop the service.");
-        
-        while (true) {  // Keeps the calculator running infinitely
-            System.out.println("Choose an operation:");
-            System.out.println("1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Exit");
-            System.out.print("Enter your choice: ");
-            int choice = scanner.nextInt();
+        int choice;
 
-            if (choice == 5) {
-                System.out.println("Exiting...");
-                break;
+        // Loop to keep the calculator running until user decides to exit
+        do {
+            System.out.println("Scientific Calculator");
+            System.out.println("1. Add\n2. Subtract\n3. Multiply\n4. Divide");
+            System.out.println("5. Power\n6. Square Root\n7. Logarithm\n8. Factorial");
+            System.out.println("9. Exit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+
+            if (choice == 9) {
+                System.out.println("Exiting the calculator...");
+                break;  // Exit the loop and end the program
             }
 
             double num1, num2;
@@ -63,10 +96,32 @@ public class Calculator {
                     num2 = scanner.nextDouble();
                     System.out.println("Result: " + divide(num1, num2));
                     break;
+                case 5:
+                    System.out.print("Enter base and exponent: ");
+                    num1 = scanner.nextDouble();
+                    num2 = scanner.nextDouble();
+                    System.out.println("Result: " + power(num1, num2));
+                    break;
+                case 6:
+                    System.out.print("Enter a number: ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Result: " + squareRoot(num1));
+                    break;
+                case 7:
+                    System.out.print("Enter a number: ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Result: " + logarithm(num1));
+                    break;
+                case 8:
+                    System.out.print("Enter a number: ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Result: " + factorial(num1));
+                    break;
                 default:
-                    System.out.println("Invalid choice.");
+                    System.out.println("Invalid choice. Please try again.");
             }
-        }
-        scanner.close();
+        } while (true);  // Continue looping until the user chooses to exit
+
+        scanner.close();  // Close the scanner after exiting the loop
     }
 }
