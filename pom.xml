@@ -13,7 +13,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
     <dependencies>
         <!-- JUnit for Unit Testing -->
         <dependency>
@@ -45,9 +45,9 @@
             </plugin>
 
             <!-- JAR Plugin -->
-         <plugin>
-                   <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-jar-plugin</artifactId>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
                     <archive>
@@ -57,7 +57,7 @@
                     </archive>
                 </configuration>
             </plugin>
-         <plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
