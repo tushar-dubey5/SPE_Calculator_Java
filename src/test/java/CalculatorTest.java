@@ -1,5 +1,4 @@
-package org.example;  // ✅ Add this to match Calculator.java
-
+import org.example.Calculator;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -69,11 +68,12 @@ public class CalculatorTest {
         }
     }
 
+    // Test for factorial
     @Test
     public void testFactorial() {
-        assertEquals(120.0, Calculator.factorial(5), 0.0001);
-        assertEquals(1.0, Calculator.factorial(0), 0.0001);
-        assertEquals(1.0, Calculator.factorial(1), 0.0001);
+        assertEquals(120.0, Calculator.factorial(5), 0.0001); // 5! = 120
+        assertEquals(1.0, Calculator.factorial(0), 0.0001); // 0! = 1
+        assertEquals(1.0, Calculator.factorial(1), 0.0001); // 1! = 1
         try {
             Calculator.factorial(-5);
             fail("Expected ArithmeticException");
