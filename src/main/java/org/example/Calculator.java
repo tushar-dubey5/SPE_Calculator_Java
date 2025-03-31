@@ -76,46 +76,78 @@ public class Calculator {
                     System.out.print("Enter two numbers: ");
                     num1 = scanner.nextDouble();
                     num2 = scanner.nextDouble();
-                    System.out.println("Result: " + add(num1, num2));
+                    try {
+                        System.out.println("Result: " + add(num1, num2));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 2:
                     System.out.print("Enter two numbers: ");
                     num1 = scanner.nextDouble();
                     num2 = scanner.nextDouble();
-                    System.out.println("Result: " + subtract(num1, num2));
+                    try {
+                        System.out.println("Result: " + subtract(num1, num2));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 3:
                     System.out.print("Enter two numbers: ");
                     num1 = scanner.nextDouble();
                     num2 = scanner.nextDouble();
-                    System.out.println("Result: " + multiply(num1, num2));
+                    try {
+                        System.out.println("Result: " + multiply(num1, num2));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 4:
                     System.out.print("Enter two numbers: ");
                     num1 = scanner.nextDouble();
                     num2 = scanner.nextDouble();
-                    System.out.println("Result: " + divide(num1, num2));
+                    try {
+                        System.out.println("Result: " + divide(num1, num2));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 5:
                     System.out.print("Enter base and exponent: ");
                     num1 = scanner.nextDouble();
                     num2 = scanner.nextDouble();
-                    System.out.println("Result: " + power(num1, num2));
+                    try {
+                        System.out.println("Result: " + power(num1, num2));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 6:
                     System.out.print("Enter a number: ");
                     num1 = scanner.nextDouble();
-                    System.out.println("Result: " + squareRoot(num1));
+                    try {
+                        System.out.println("Result: " + squareRoot(num1));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 7:
                     System.out.print("Enter a number: ");
                     num1 = scanner.nextDouble();
-                    System.out.println("Result: " + logarithm(num1));
+                    try {
+                        System.out.println("Result: " + logarithm(num1));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 8:
                     System.out.print("Enter a number: ");
                     num1 = scanner.nextDouble();
-                    System.out.println("Result: " + factorial(num1));
+                    try {
+                        System.out.println("Result: " + factorial(num1));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
